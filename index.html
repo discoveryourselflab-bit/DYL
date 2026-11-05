@@ -68,11 +68,17 @@
   .brand-sub{display:none;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 
   /* Hero */
-  .hero{position:relative;overflow:hidden;
-        background:
-          linear-gradient(to bottom,rgba(250,246,239,.85),rgba(250,246,239,.6) 50%,var(--bg)),
-          url("/assets/hero-soil-sky.jpg") center/cover no-repeat,
-          linear-gradient(to bottom,#cfe0ee,#efe4d2 60%,#b58a63);}
+  .hero{position:relative;overflow:hidden;isolation:isolate;background:var(--bg)}
+  /* Abstract Bhumi (earth) & Akash (sky) wash: sky light above, earth warmth below */
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+      radial-gradient(55% 60% at 88% 0%,rgba(44,110,168,.30),transparent 70%),
+      radial-gradient(35% 40% at 62% 8%,rgba(28,78,120,.14),transparent 70%),
+      radial-gradient(55% 45% at 6% 100%,rgba(138,79,43,.26),transparent 72%),
+      radial-gradient(38% 34% at 38% 96%,rgba(176,94,64,.18),transparent 72%),
+      linear-gradient(to bottom,#EAF0F4 0%,var(--bg) 52%,#F2E8DB 100%)}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(to bottom,transparent 82%,var(--bg) 100%),
+      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice'><g fill='none' stroke='%232C6EA8' stroke-width='1.1' opacity='.32'><circle cx='1240' cy='-60' r='260'/><circle cx='1240' cy='-60' r='340'/><circle cx='1240' cy='-60' r='420'/><circle cx='1240' cy='-60' r='500'/></g><g fill='none' stroke='%238A4F2B' stroke-width='1.1' opacity='.30'><path d='M-20 640 C 340 590 760 700 1460 620'/><path d='M-20 680 C 380 630 780 740 1460 662'/><path d='M-20 720 C 420 675 800 780 1460 704'/><path d='M-20 760 C 460 720 820 820 1460 746'/></g></svg>") center/cover no-repeat}
   .hero .wrap{padding-top:10rem;padding-bottom:6rem}
   .hero-kicker{font-family:var(--serif);font-size:1.9rem}
   .hero-dil{margin-top:.5rem;font-size:1.1rem;font-weight:500;letter-spacing:.04em;color:var(--primary)}
@@ -238,10 +244,12 @@
         <div>
           <h3>Ravi Viswanathan</h3>
           <div class="bio">
-            <p>Ravi Viswanathan is a disciple of Yoga, author and social impact professional who is deeply interested in the question of how we live a life that feels both meaningful and useful.</p>
-            <p>He facilitates Yoga classes in the classical Bihar/Satyananda tradition, drawing on its integrated approach to meditation, self-awareness and yogic living. His own career has taken him from aerospace engineering to management consulting, corporate strategy and eventually CSR and philanthropy, with each transition bringing him closer to work he genuinely cares about.</p>
-            <p>Ravi is also the author of <em>Anna: The Queen of Hearts – Embracing Life through Volunteering</em>, a book celebrating volunteering, service and the people who make life better for others.</p>
-            <p>As a DYL facilitator, he brings together experiences from the corporate world, Yoga and volunteering, with a curiosity about a question he continues to explore himself: <em>How do we discover who we are, and allow that understanding to shape how we live and work?</em></p>
+            <p>I've always been curious about what makes life meaningful and how we can make the most of the time and opportunities given to us.</p>
+            <p>My journey has taken me through many diverse worlds, from aerospace engineering to management consulting, corporate strategy, and eventually CSR and philanthropy. Looking back, each turn brought me a little closer to doing what I genuinely cared about, working with people and finding ways to make a difference.</p>
+            <p>Alongside this, Yoga has been a wonderful companion in my life. I'm a practitioner and teacher of classical Yoga in the Bihar/Satyananda tradition, which has helped me see Yoga as a way of living, learning and understanding myself, well beyond the mat.</p>
+            <p>Volunteering has been another great teacher. I recently wrote <em>Anna: The Queen of Hearts – Embracing Life through Volunteering</em>, a book inspired by an extraordinary life of service of my dear colleague and the joy that comes from giving ourselves to others.</p>
+            <p>These days, I find myself increasingly drawn to exploring the inner world, tending to my garden (both within and outside!), and discovering what it means to live with greater awareness, joy and purpose.</p>
+            <p>I'm looking forward to being part of DYL, sharing a little of what life has taught me, learning from everyone else's journeys, and exploring together a question I'm still discovering answers to: <em>Who am I, and how can I bring more of myself into whatever I do?</em></p>
           </div>
         </div>
       </article>
@@ -251,8 +259,13 @@
         <div class="photo" aria-hidden="true">AA<img src="/assets/facilitators/aji.jpg" alt="" onerror="this.remove()"></div>
         <div>
           <h3>Aji Augustine</h3>
-          <!-- Bio: replace the line below with Aji's bio paragraphs inside <div class="bio"><p>…</p></div> -->
-          <p class="soon">Profile coming soon.</p>
+          <div class="bio">
+            <p>I've always been curious about people, what makes us who we are, what energises us, and where we naturally thrive.</p>
+            <p>Nearly two decades of working across CSR, social impact and the nonprofit world have brought me close to people from very different walks of life and deepened this curiosity. My own journey, along with my exploration of Neuro-Linguistic Programming, human behaviour, perception, communication and what shapes the way we think and make choices, has shaped how I understand and work with people today.</p>
+            <p>That journey eventually led me to co-found Bhumi &amp; Akash and create DYL, a guided journey that helps people discover more about themselves, recognise what naturally energises them, and explore where they can truly thrive.</p>
+            <p>I don't see myself as someone with the answers. I see my role as listening deeply, asking thoughtful questions, offering different perspectives and helping you notice strengths and possibilities you may not have noticed before.</p>
+            <p>I'm not here to define your path. I'm here to walk alongside you as you discover more of it for yourself.</p>
+          </div>
         </div>
       </article>
 
@@ -261,8 +274,11 @@
         <div class="photo" aria-hidden="true">KS<img src="/assets/facilitators/keerthana.jpg" alt="" onerror="this.remove()"></div>
         <div>
           <h3>Keerthana Sheshadri</h3>
-          <!-- Bio: replace the line below with Keerthana's bio paragraphs inside <div class="bio"><p>…</p></div> -->
-          <p class="soon">Profile coming soon.</p>
+          <div class="bio">
+            <p>My work has taken me across the corporate and social impact worlds over the last decade. Volunteering and my love for the outdoors have also been a big part of my life. Along the way, I've had the chance to meet people from different walks of life, each with their own ideas of what success and happiness look like.</p>
+            <p>Beyond work, purpose and all the things we set out to achieve, I have realised having fun is the most important part of living well. I love bringing people together, creating experiences and finding opportunities to learn through play.</p>
+            <p>This is what drew me to co-found Bhumi &amp; Akash and create DYL. It brings together my love for building connections and creating shared experiences with the belief that discovering ourselves can be an exciting, playful and enriching experience. As a facilitator, I hope to create spaces where people feel comfortable being themselves, exploring new possibilities and connecting with others, while enjoying the process of discovering more about who they are.</p>
+          </div>
         </div>
       </article>
 
